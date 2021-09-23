@@ -62,10 +62,10 @@ public class Dice extends JLabel {
 
 	}
 
-	ImageIcon[] imgs = new ImageIcon[] { new ImageIcon(Dice.class.getResource("img/dice_icon_1.png")),
-			new ImageIcon(Dice.class.getResource("img/dice_icon_2.png")),
-			new ImageIcon(Dice.class.getResource("img/dice_icon_3.png")),
-			new ImageIcon(Dice.class.getResource("img/dice_icon_4.png")),
-			new ImageIcon(Dice.class.getResource("img/dice_icon_5.png")),
-			new ImageIcon(Dice.class.getResource("img/dice_icon_6.png")) };
+	ImageIcon[] imgs = new ImageIcon[] { new ImageIcon("img/dice_icon_1.png"),
+			new ImageIcon("img/dice_icon_2.png"),
+			new ImageIcon("img/dice_icon_3.png"),
+			new ImageIcon("img/dice_icon_4.png"),
+			new ImageIcon("img/dice_icon_5.png"),
+			new ImageIcon("img/dice_icon_6.png") };
 }

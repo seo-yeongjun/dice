@@ -10,7 +10,7 @@ public class Profile extends JPanel{
 
 	private String name = "임시용";
 	private String HP = "11";
-	private ImageIcon[] imgs = {new ImageIcon(Profile.class.getResource("img/player.png")),new ImageIcon(Profile.class.getResource("img/tomb.png"))};
+	private ImageIcon[] imgs = {new ImageIcon("img/player.png"),new ImageIcon("img/tomb.png")};
 
 	public Profile() {
 		setLayout(new FlowLayout());

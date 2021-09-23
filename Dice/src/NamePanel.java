@@ -19,32 +19,54 @@ public class NamePanel extends JPanel {
 
 	public NamePanel() {
 
+		// 라벨 컬러
+		Color textBackColor = new Color(255, 255, 255, 80);
+
 		setLayout(null);
 
-		JLabel label = new JLabel();
-		label.setOpaque(true);
-		label.setBackground(new Color(255, 255, 255, 80));
-		label.setBounds(100,200,200,50);
-		label.setText("<html>Dice<br>text 기반 게임<br>캐릭터 이름 설정</html>");
+		// 게임 이름
+		JLabel gameName = new JLabel("Dice");
+		gameName.setOpaque(true);
+		gameName.setBackground(textBackColor);
+		gameName.setFont(new Font("맑은 고딕", Font.BOLD, 76));
+		gameName.setHorizontalAlignment(JLabel.CENTER);
+		gameName.setBounds(280, 200, 400, 65);
+
+		// 게임 설명
+		JLabel sub = new JLabel("text 기반 주사위 RPG");
+		sub.setOpaque(true);
+		sub.setBackground(textBackColor);
+		sub.setFont(new Font("맑은 고딕", Font.PLAIN, 30));
+		sub.setHorizontalAlignment(JLabel.CENTER);
+		sub.setBounds(280, 265, 400, 65);
+
+		// 게임 이름 설정
+		JLabel nameSetLabel = new JLabel("↓ 용사 이름을 입력해 주세요 ↓ ");
+		nameSetLabel.setOpaque(true);
+		nameSetLabel.setBackground(textBackColor);
+		nameSetLabel.setFont(new Font("맑은 고딕", Font.PLAIN, 15));
+		nameSetLabel.setHorizontalAlignment(JLabel.CENTER);
+		nameSetLabel.setBounds(360, 350, 240, 50);
 
 		JTextField field = new JTextField();
 		field.setOpaque(true);
-		field.setBackground(new Color(255, 255, 255, 100));
-		field.setFont(new Font(label.getName(), Font.PLAIN, Math.min(50, 300)));
+		field.setFont(new Font("맑은 고딕", Font.PLAIN, 20));
+		field.setBounds(360, 400, 240, 50);
 		field.setText(config.profile().getName());
 
 		JButton submit = new JButton();
 		submit.setText("시작하기");
 
-		add(label);
+		add(sub);
+		add(gameName);
+		add(nameSetLabel);
 		add(field);
 		add(submit);
-		repaint();
 		timer.start();
 	}
 
 	public void paintComponent(Graphics g) {
-		g.drawImage(new ImageIcon(Profile.class.getResource("img/back1.jpg")).getImage(), 0, 0, null);
+		g.drawImage(new ImageIcon("img/back1.jpg").getImage(), 0, 0, null);
 	}
 
 	Timer timer = new Timer(1000, new ActionListener() {
@@ -52,7 +74,7 @@ public class NamePanel extends JPanel {
 		public void actionPerformed(ActionEvent e) {
 
 			i++;
-			repaint();
+		
 			System.out.println(i);
 
 		}
