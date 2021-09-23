@@ -7,6 +7,7 @@ import java.awt.event.ActionListener;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
+import javax.swing.JCheckBox;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
@@ -19,12 +20,14 @@ public class NamePanel extends JPanel {
 
 	public NamePanel() {
 
+		JCheckBox[] fruits = new JCheckBox[3];
+		
 		// 라벨 컬러
 		Color textBackColor = new Color(255, 255, 255, 80);
 
 		setLayout(null);
 
-		// 게임 이름
+		// 게임 제목
 		JLabel gameName = new JLabel("Dice");
 		gameName.setOpaque(true);
 		gameName.setBackground(textBackColor);
@@ -41,18 +44,34 @@ public class NamePanel extends JPanel {
 		sub.setBounds(280, 265, 400, 65);
 
 		// 게임 이름 설정
-		JLabel nameSetLabel = new JLabel("↓ 용사 이름을 입력해 주세요 ↓ ");
+		JLabel nameSetLabel = new JLabel("↓ 용사 이름을 입력해 주세요 ↓");
 		nameSetLabel.setOpaque(true);
 		nameSetLabel.setBackground(textBackColor);
 		nameSetLabel.setFont(new Font("맑은 고딕", Font.PLAIN, 15));
 		nameSetLabel.setHorizontalAlignment(JLabel.CENTER);
 		nameSetLabel.setBounds(360, 350, 240, 50);
 
+		// 게임 이름 설정 필드
 		JTextField field = new JTextField();
 		field.setOpaque(true);
 		field.setFont(new Font("맑은 고딕", Font.PLAIN, 20));
-		field.setBounds(360, 400, 240, 50);
-		field.setText(config.profile().getName());
+		field.setBounds(405, 405, 150, 30);
+		field.setHorizontalAlignment(JLabel.CENTER);
+
+		// 직업 설정 라벨
+		JLabel jobSetLabel = new JLabel("↓ 직업을 선택해 주세요 ↓ ");
+		jobSetLabel.setOpaque(true);
+		jobSetLabel.setBackground(textBackColor);
+		jobSetLabel.setFont(new Font("맑은 고딕", Font.PLAIN, 15));
+		jobSetLabel.setHorizontalAlignment(JLabel.CENTER);
+		jobSetLabel.setBounds(360, 450, 240, 50);
+
+		// 직업설정 라디오 채크
+		JTextField fiel1d = new JTextField();
+		field.setOpaque(true);
+		field.setFont(new Font("맑은 고딕", Font.PLAIN, 20));
+		field.setBounds(405, 405, 150, 30);
+		field.setHorizontalAlignment(JLabel.CENTER);
 
 		JButton submit = new JButton();
 		submit.setText("시작하기");
@@ -62,6 +81,7 @@ public class NamePanel extends JPanel {
 		add(nameSetLabel);
 		add(field);
 		add(submit);
+		add(jobSetLabel);
 		timer.start();
 	}
 
@@ -74,7 +94,7 @@ public class NamePanel extends JPanel {
 		public void actionPerformed(ActionEvent e) {
 
 			i++;
-		
+
 			System.out.println(i);
 
 		}
