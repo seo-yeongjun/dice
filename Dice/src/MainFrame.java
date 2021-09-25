@@ -2,6 +2,7 @@ import java.awt.BorderLayout;
 import java.awt.Container;
 
 import javax.swing.JFrame;
+import javax.swing.JPanel;
 
 public class MainFrame extends JFrame{
 	Container c = getContentPane();
@@ -15,10 +16,13 @@ public class MainFrame extends JFrame{
 		setSize(1000,700);
 		setLayout(new BorderLayout());
 		c.add(config.bottomPanel(),BorderLayout.SOUTH);
-		c.add(config.namePanel(),BorderLayout.CENTER);
+		c.add(config.startPanel(),BorderLayout.CENTER);
 	}
 	
-	public static void main(String[] args) {
-		JFrame dice = new MainFrame();
+	public void changeCenter(JPanel before, JPanel after) {
+		remove(before);
+		add(after,BorderLayout.CENTER);
+		repaint();
 	}
+	
 }

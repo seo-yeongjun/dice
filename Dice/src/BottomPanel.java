@@ -10,10 +10,10 @@ public class BottomPanel extends JPanel{
 	public BottomPanel() {
 		setLayout(new BorderLayout());
 		setBackground(Color.blue);
-		setPreferredSize(new Dimension(1600,150));
+		setPreferredSize(new Dimension(1600,120));
 		add(config.dice(),BorderLayout.EAST);
 		add(config.profile(),BorderLayout.WEST);
+		add(config.stageScript(),BorderLayout.CENTER);
 	}
-	
 	
 }

@@ -11,16 +11,18 @@ import javax.swing.Timer;
 
 public class Dice extends JLabel {
 
+	Config config = new Config();
 	Dice dice = this;
 	private int num;
 
 	public Dice() {
 		dice.setSize(41, 41);
-		dice.setBackground(Color.yellow);
+		dice.setBackground(Color.white);
 		dice.setOpaque(true);
 		dice.setIcon(imgs[0]);
 		dice.setText("  주사위 : 0  ");
-		dice.addMouseListener(new FirstMouseListener());
+		dice.addMouseListener(new DiceMouseListener());
+		dice.addMouseListener(config.dungeonPanel().tm);
 	}
 
 	public void roll() {
@@ -34,7 +36,8 @@ public class Dice extends JLabel {
 	}
 
 
-	class FirstMouseListener extends MouseAdapter {
+	class DiceMouseListener extends MouseAdapter {
+		Config config = new Config();
 		int i = 0;
 		@Override
 		public void mouseEntered(MouseEvent e) {
@@ -46,8 +49,13 @@ public class Dice extends JLabel {
 		}
 		
 		public void mouseClicked(MouseEvent e) {
+			if(config.dungeonPanel().tx.textNum == 6) {
 			t.stop();
 			roll();
+			config.dungeonPanel().config.dungeonPanel().tx.textNum++;
+			config.dungeonPanel().tx.setText(config.dungeonPanel().tx.textSet[config.dungeonPanel().tx.textNum]);
+			repaint();
+			}
 		}
 		
 		Timer t = new Timer(100, new ActionListener() {

@@ -8,27 +8,50 @@ import javax.swing.JPanel;
 
 public class Profile extends JPanel{
 
-	private String name = "임시용";
-	private String HP = "11";
-	private ImageIcon[] imgs = {new ImageIcon("img/player.png"),new ImageIcon("img/tomb.png")};
-
+	private String name = "???";
+	private int HP = 14;
+	private int[] HPset = {14,17,20,23};
+	private ImageIcon[] imgs = {new ImageIcon("img/tomb.png"),new ImageIcon("img/archer.png"),new ImageIcon("img/knight.png"),new ImageIcon("img/gunner.png")};
+	private HP setHP = new HP();
+	private Name setName = new Name();
+	private ProfileImg profileImg = new ProfileImg();
 	public Profile() {
 		setLayout(new FlowLayout());
-		setBackground(Color.gray);
+		setBackground(Color.white);
 		setPreferredSize(new Dimension(110,60));
-		add(new Name());
-		add(new HP());
-		add(new ProfileImg());
+		add(setName);
+		add(setHP);
+		add(profileImg);
+	}
+	
+	public void levelHP(int i) {
+		this.HP = HPset[i];
+		repaint();
 	}
 	
 	public void setName(String name) {
 		this.name= name;
+		setName.setText("이름: "+name);
 	}
 	
 	public String getName() {
 		return name;
 	}
 
+	public void setHP(int HP) {
+		this.HP -= HP;
+		setHP.setText("현재 체력: "+Integer.toString(this.HP));
+	}
+	
+	public int getHP() {
+		return HP;
+	}
+
+	public void setProfile(int i) {
+		profileImg.setIcon(imgs[i]);
+	}
+	
+	
 	private class Name extends JLabel{
 		
 		public Name() {
