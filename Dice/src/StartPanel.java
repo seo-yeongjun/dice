@@ -13,12 +13,17 @@ import javax.swing.JRadioButton;
 import javax.swing.JTextField;
 import javax.swing.Timer;
 
+//게임 시작시 메인 Panel
 public class StartPanel extends JPanel {
 
+	//클래스들을 모은 config 클래스
 	Config config = new Config();
+	//직업 선택 RadioButton 배열
 	JRadioButton[] jobs = new JRadioButton[3];
+	//직업 이름 배열
 	String[] str = { "archer", "knight", "gunner" };
 
+	//직업 선택 RadioButton에 쓰이는 변수
 	int i = 0;
 
 	public StartPanel() {
@@ -26,6 +31,7 @@ public class StartPanel extends JPanel {
 		// 라벨 컬러
 		Color textBackColor = new Color(255, 255, 255, 80);
 
+		//오브젝트들에 위치를 원하는 곳에 배치하기 위해 Layout은 null로 함
 		setLayout(null);
 
 		// 게임 제목
@@ -77,7 +83,7 @@ public class StartPanel extends JPanel {
 			add(jobs[i]);
 		}
 
-		// 시작 버튼
+		// 게임 시작 버튼
 		JButton submit = new JButton();
 		submit.setFont(new Font("맑은 고딕", Font.PLAIN, 15));
 		submit.setHorizontalAlignment(JLabel.CENTER);
@@ -100,6 +106,7 @@ public class StartPanel extends JPanel {
 			}
 		});
 
+		//각 요소들 추가
 		add(sub);
 		add(gameName);
 		add(nameSetLabel);
@@ -109,6 +116,7 @@ public class StartPanel extends JPanel {
 
 	}
 
+	//startPanel의 배경 이미지 설정
 	public void paintComponent(Graphics g) {
 		g.drawImage(new ImageIcon(getClass().getResource("img/back1.jpg")).getImage(), 0, 0, null);
 	}

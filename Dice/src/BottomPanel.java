@@ -4,6 +4,7 @@ import java.awt.Dimension;
 
 import javax.swing.JPanel;
 
+//메인 프레임에 SOUTH에 들어갈 bottom 패널
 public class BottomPanel extends JPanel{
 	Config config = new Config();
 	

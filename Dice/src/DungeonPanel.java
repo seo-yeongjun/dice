@@ -14,6 +14,7 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.Timer;
 
+//start 패널에서 시작 버튼을 누르면, 메인 프레임에 center에 오르는 던전 패널
 public class DungeonPanel extends JPanel {
 	Config config = new Config();
 	TurnText tx = new TurnText();
@@ -27,10 +28,13 @@ public class DungeonPanel extends JPanel {
 		add(tx);
 	}
 
+	//배경 이미지 설정
 	public void paintComponent(Graphics g) {
 		g.drawImage(new ImageIcon(getClass().getResource("img/back1.jpg")).getImage(), 0, 0, null);
 	}
 
+	//각 턴마다 textLabel의 setText를 하고
+	//적을 처치시 winFrame을 케릭터가 죽었을 시, loseFrame을 띄우는 역할을 하는 마우스이벤트
 	class TurnMouseEvent extends MouseAdapter {
 
 		public void mouseClicked(MouseEvent e) {
@@ -89,6 +93,8 @@ public class DungeonPanel extends JPanel {
 		}
 
 		int i = 0;
+		
+		//공격시 애니메이션 효과를 위한 Timer
 		Timer monsterAttackAnimaion = new Timer(100, new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
@@ -108,6 +114,7 @@ public class DungeonPanel extends JPanel {
 
 }
 
+//각 턴에 사용 될 JLabel
 class TurnText extends JLabel {
 	int textNum = 0;
 	String textClick = "      ..클릭";

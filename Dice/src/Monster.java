@@ -5,10 +5,15 @@ import java.util.Random;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 
+//적의 정보를 담는 클래스
 public class Monster extends JLabel{
 	Config config = new Config();
+	
+	//던전 스테이지 별 적 이미지 배열
 	private ImageIcon[] monsterImgs = {new ImageIcon(getClass().getResource("img/monster1.png")),new ImageIcon(getClass().getResource("img/monster2.png")),new ImageIcon(getClass().getResource("img/monster3.png")),new ImageIcon(getClass().getResource("img/monster4.png"))};
+	//던전 스테이지 별 적 HP 배열
 	private int hp[] = {8,15,20,25};
+	
 	public Monster() {
 		setText("HP :"+hp[config.getDungeonLevel()]);
 		setIcon(monsterImgs[config.getDungeonLevel()]);

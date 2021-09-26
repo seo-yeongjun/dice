@@ -1,3 +1,4 @@
+//configuration
 public class Config {
 
 	private static Profile profile = new Profile();
