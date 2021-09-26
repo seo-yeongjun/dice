@@ -26,7 +26,7 @@ public class StageScript extends JPanel {
 	}
 
 	public void paintComponent(Graphics g) {
-		g.drawImage(new ImageIcon("img/diceBack.png").getImage(), 0, 0, null);
+		g.drawImage(new ImageIcon(getClass().getResource("img/diceBack.png")).getImage(), 0, 0, null);
 	}
 
 }

@@ -17,7 +17,7 @@ public class Config {
 	}
 		
 	public WinFrame winFrame() {
-		return Config.winFrame;
+		return winFrame;
 	}
 	
 	public int getDungeonLevel() {
@@ -29,33 +29,33 @@ public class Config {
 	}
 
 	public Monster monster() {
-		return Config.monster;
+		return monster;
 	}
 
 
 
 	public StartPanel startPanel() {
-		return Config.startPanel;
+		return startPanel;
 	}
 
 	public MainFrame mainFrame() {
-		return Config.mainFrame;
+		return mainFrame;
 	}
 
 	public DungeonPanel dungeonPanel() {
-		return Config.dungeonPanel;
+		return dungeonPanel;
 	}
 
 	public Profile profile() {
-		return Config.profile;
+		return profile;
 	}
 
 	public Dice dice() {
-		return Config.dice;
+		return dice;
 	}
 
 	public BottomPanel bottomPanel() {
-		return Config.bottomPanel;
+		return bottomPanel;
 	}
 
 }

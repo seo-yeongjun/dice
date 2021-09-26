@@ -7,7 +7,7 @@ import javax.swing.JLabel;
 
 public class Monster extends JLabel{
 	Config config = new Config();
-	private ImageIcon[] monsterImgs = {new ImageIcon("img/monster1.png"),new ImageIcon("img/monster2.png"),new ImageIcon("img/monster3.png"),new ImageIcon("img/monster4.png")};
+	private ImageIcon[] monsterImgs = {new ImageIcon(getClass().getResource("img/monster1.png")),new ImageIcon(getClass().getResource("img/monster2.png")),new ImageIcon(getClass().getResource("img/monster3.png")),new ImageIcon(getClass().getResource("img/monster4.png"))};
 	private int hp[] = {8,15,20,25};
 	public Monster() {
 		setText("HP :"+hp[config.getDungeonLevel()]);

@@ -16,8 +16,7 @@ import javax.swing.JLabel;
 public class LoseFrame extends JInternalFrame {
 
 	public LoseFrame() {
-		Config config = new Config();
-
+	
 		setMaximizable(true);
 		setTitle("You Lose");
 		setLayout(new FlowLayout());
@@ -41,7 +40,7 @@ public class LoseFrame extends JInternalFrame {
 	}
 	
 	public void paintComponent(Graphics g) {
-		g.drawImage(new ImageIcon("img/back1.jpg").getImage(), 0, 0, null);
+		g.drawImage(new ImageIcon(getClass().getResource("img/back1.jpg")).getImage(), 0, 0, null);
 	}
 
 	JLabel dieLabel = new JLabel("YOU DIE");

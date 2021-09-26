@@ -13,7 +13,6 @@ import javax.swing.JInternalFrame;
 import javax.swing.JLabel;
 
 public class FinalWinFrame extends JInternalFrame {
-	Config config = new Config();
 	
 	public FinalWinFrame() {
 	
@@ -47,7 +46,7 @@ public class FinalWinFrame extends JInternalFrame {
 	}
 
 	public void paintComponent(Graphics g) {
-		g.drawImage(new ImageIcon("img/back1.jpg").getImage(), 0, 0, null);
+		g.drawImage(new ImageIcon(getClass().getResource("img/back1.jpg")).getImage(), 0, 0, null);
 	}
 
 	JLabel winLabel = new JLabel("YOU WIN, CONGRATULATION");

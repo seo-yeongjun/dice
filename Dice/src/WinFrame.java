@@ -57,7 +57,7 @@ public class WinFrame extends JInternalFrame {
 	}
 
 	public void paintComponent(Graphics g) {
-		g.drawImage(new ImageIcon("img/back1.jpg").getImage(), 0, 0, null);
+		g.drawImage(new ImageIcon(getClass().getResource("img/back1.jpg")).getImage(), 0, 0, null);
 	}
 
 	JLabel winLabel = new JLabel("적을 처치하였습니다.");

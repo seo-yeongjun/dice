@@ -110,7 +110,7 @@ public class StartPanel extends JPanel {
 	}
 
 	public void paintComponent(Graphics g) {
-		g.drawImage(new ImageIcon("img/back1.jpg").getImage(), 0, 0, null);
+		g.drawImage(new ImageIcon(getClass().getResource("img/back1.jpg")).getImage(), 0, 0, null);
 	}
 
 	

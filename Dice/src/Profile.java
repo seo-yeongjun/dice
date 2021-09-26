@@ -11,7 +11,7 @@ public class Profile extends JPanel{
 	private String name = "???";
 	private int HP = 14;
 	private int[] HPset = {14,17,20,23};
-	private ImageIcon[] imgs = {new ImageIcon("img/tomb.png"),new ImageIcon("img/archer.png"),new ImageIcon("img/knight.png"),new ImageIcon("img/gunner.png")};
+	private ImageIcon[] imgs = {new ImageIcon(getClass().getResource("img/tomb.png")),new ImageIcon(getClass().getResource("img/archer.png")),new ImageIcon(getClass().getResource("img/knight.png")),new ImageIcon(getClass().getResource("img/gunner.png"))};
 	private HP setHP = new HP();
 	private Name setName = new Name();
 	private ProfileImg profileImg = new ProfileImg();
