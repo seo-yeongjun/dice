@@ -71,10 +71,11 @@ public class DungeonPanel extends JPanel {
 					}
 
 					if (tx.textNum == 3) {
-						monsterAttackAnimaion.start();
+						AttackAnimaion.start();
+						config.music(2);
 						tx.setText(tx.textSet[tx.textNum]);
 					} else if (tx.textNum == 4) {
-						monsterAttackAnimaion.stop();
+						AttackAnimaion.stop();
 						i = 0;
 						int atk = config.monster().attack();
 						tx.setText(atk + tx.textSet[tx.textNum]);
@@ -110,6 +111,21 @@ public class DungeonPanel extends JPanel {
 			}
 		});
 
+		//적 공격시 애니메이션 효과를 위한 Timer
+				Timer AttackAnimaion = new Timer(100, new ActionListener() {
+					@Override
+					public void actionPerformed(ActionEvent e) {
+						if (i == 0 || i == 2) {
+							config.bottomPanel().setLocation(10, config.bottomPanel().getY());
+							i++;
+						} else if (i == 1 || i == 3) {
+							config.bottomPanel().setLocation(-10, config.bottomPanel().getY());
+							i++;
+						} else {
+							config.bottomPanel().setLocation(0, config.bottomPanel().getY());
+						}
+					}
+				});
 	}
 
 }

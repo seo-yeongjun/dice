@@ -3,7 +3,14 @@ import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.File;
+import java.io.IOException;
 
+import javax.sound.sampled.AudioInputStream;
+import javax.sound.sampled.AudioSystem;
+import javax.sound.sampled.Clip;
+import javax.sound.sampled.LineUnavailableException;
+import javax.sound.sampled.UnsupportedAudioFileException;
 import javax.swing.ButtonGroup;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -11,19 +18,18 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JRadioButton;
 import javax.swing.JTextField;
-import javax.swing.Timer;
 
 //게임 시작시 메인 Panel
 public class StartPanel extends JPanel {
 
-	//클래스들을 모은 config 클래스
+	// 클래스들을 모은 config 클래스
 	Config config = new Config();
-	//직업 선택 RadioButton 배열
+	// 직업 선택 RadioButton 배열
 	JRadioButton[] jobs = new JRadioButton[3];
-	//직업 이름 배열
+	// 직업 이름 배열
 	String[] str = { "archer", "knight", "gunner" };
 
-	//직업 선택 RadioButton에 쓰이는 변수
+	// 직업 선택 RadioButton에 쓰이는 변수
 	int i = 0;
 
 	public StartPanel() {
@@ -31,7 +37,7 @@ public class StartPanel extends JPanel {
 		// 라벨 컬러
 		Color textBackColor = new Color(255, 255, 255, 80);
 
-		//오브젝트들에 위치를 원하는 곳에 배치하기 위해 Layout은 null로 함
+		// 오브젝트들에 위치를 원하는 곳에 배치하기 위해 Layout은 null로 함
 		setLayout(null);
 
 		// 게임 제목
@@ -106,20 +112,21 @@ public class StartPanel extends JPanel {
 			}
 		});
 
-		//각 요소들 추가
+		// 각 요소들 추가
 		add(sub);
 		add(gameName);
 		add(nameSetLabel);
 		add(field);
 		add(submit);
 		add(jobSetLabel);
-
+		config.music(0);
 	}
 
-	//startPanel의 배경 이미지 설정
+	
+
+	// startPanel의 배경 이미지 설정
 	public void paintComponent(Graphics g) {
 		g.drawImage(new ImageIcon(getClass().getResource("img/back1.jpg")).getImage(), 0, 0, null);
 	}
 
-	
 }

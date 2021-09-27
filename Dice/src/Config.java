@@ -1,3 +1,11 @@
+import java.io.IOException;
+import java.net.URL;
+import javax.sound.sampled.AudioInputStream;
+import javax.sound.sampled.AudioSystem;
+import javax.sound.sampled.Clip;
+import javax.sound.sampled.LineUnavailableException;
+import javax.sound.sampled.UnsupportedAudioFileException;
+
 //configuration
 public class Config {
 
@@ -12,6 +20,24 @@ public class Config {
 	private static int dungeonLevel = 0;
 	private static WinFrame winFrame = new WinFrame();
 	
+	//https://www.codegrepper.com/code-examples/java/how+to+play+sound+in+java%27+mp3+swing 소스코드 이용
+	//효과음 메서드
+	public void music(int i) {
+		Clip clip;
+		URL[] file = {getClass().getResource("music/bgm.wav"),getClass().getResource("music/dice.wav"),getClass().getResource("music/atk.wav")};
+		try {
+			AudioInputStream input = AudioSystem.getAudioInputStream(file[i]);
+			clip = AudioSystem.getClip();
+			clip.open(input);
+			clip.start();
+		} catch (UnsupportedAudioFileException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		} catch (LineUnavailableException e) {
+			e.printStackTrace();
+		}
+	}
 	
 	public StageScript stageScript() {
 		return stageScript;
