@@ -22,7 +22,7 @@ public class Monster extends JLabel{
 		setFont(new Font("맑은 고딕", Font.BOLD, 60));
 	}
 	
-	
+	//몬스터 공격 데미지 리턴 메소드
 	public int attack() {
 		return new Random().nextInt(6) + 1;
 	}
@@ -34,16 +34,19 @@ public class Monster extends JLabel{
 		setBackground(new Color(255, 255, 255, 80));
 	}
 	
+	//스테이지 클리어시 레벨을 세팅하기위한 메소드
 	public void levelSet(int level) {
 		setText("HP :"+hp[level]);
 		setIcon(monsterImgs[level]);
 	}
 	
+	//스테이지 클리어시 HP를 세팅하기 위한 메소드
 	public void setHP(int i) {
 		hp[config.getDungeonLevel()] -= i;
 		setText("HP :" +hp[config.getDungeonLevel()]);
 	}
 	
+	//몬스터의 현재 체력을 리턴하는 메소드
 	public int getHP() {
 		return hp[config.getDungeonLevel()];
 	}

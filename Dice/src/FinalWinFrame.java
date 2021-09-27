@@ -12,6 +12,7 @@ import javax.swing.JButton;
 import javax.swing.JInternalFrame;
 import javax.swing.JLabel;
 
+//4스테이지 최종 몬스터를 죽이면 나타날 FinalWinFrame 클래스
 public class FinalWinFrame extends JInternalFrame {
 	
 	public FinalWinFrame() {
@@ -20,6 +21,7 @@ public class FinalWinFrame extends JInternalFrame {
 		setLayout(new GridLayout(2,1));
 		setVisible(true);
 		
+		//종료 버튼
 		JButton next = new JButton();
 		next.setText("종료 하기");
 		next.setHorizontalAlignment(JLabel.CENTER);
@@ -45,6 +47,7 @@ public class FinalWinFrame extends JInternalFrame {
 		add(next);
 	}
 
+	//배경 이미지 그리기
 	public void paintComponent(Graphics g) {
 		g.drawImage(new ImageIcon(getClass().getResource("img/back1.jpg")).getImage(), 0, 0, null);
 	}

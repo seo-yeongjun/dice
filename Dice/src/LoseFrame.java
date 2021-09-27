@@ -13,6 +13,7 @@ import javax.swing.JFrame;
 import javax.swing.JInternalFrame;
 import javax.swing.JLabel;
 
+//몬스터에게 사망시 나타날 LoseFrame 클래스
 public class LoseFrame extends JInternalFrame {
 
 	public LoseFrame() {
@@ -27,6 +28,8 @@ public class LoseFrame extends JInternalFrame {
 		setBackground(new Color(255, 255, 255, 80));
 		dieLabel.setFont(new Font("맑은 고딕", Font.BOLD, 80));
 		exit.setFont(new Font("맑은 고딕", Font.BOLD, 80));
+		
+		//종료를 위한 마우스리스너
 		exit.addActionListener(new ActionListener() {
 
 			@Override
@@ -39,6 +42,7 @@ public class LoseFrame extends JInternalFrame {
 		repaint();
 	}
 	
+	//배경 그리기
 	public void paintComponent(Graphics g) {
 		g.drawImage(new ImageIcon(getClass().getResource("img/back1.jpg")).getImage(), 0, 0, null);
 	}

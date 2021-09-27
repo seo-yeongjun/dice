@@ -12,6 +12,7 @@ import javax.swing.JButton;
 import javax.swing.JInternalFrame;
 import javax.swing.JLabel;
 
+//스테이지 클리어시 띄어질 WinFrame
 public class WinFrame extends JInternalFrame {
 	Config config = new Config();
 	
@@ -25,6 +26,8 @@ public class WinFrame extends JInternalFrame {
 		next.setText("다음 스테이지로");
 		next.setHorizontalAlignment(JLabel.CENTER);
 		next.setBounds(380, 480, 200, 50);
+		
+		//몬스터의 레벨, 체력과 케릭터의 체력을 다음 스테이지에 맞게 초기화하고, 각 패널에 위치에 새로 그리기 위한 Listener
 		next.addActionListener(new ActionListener() {
 
 			@Override
@@ -56,6 +59,7 @@ public class WinFrame extends JInternalFrame {
 		add(next);
 	}
 
+	//배경 이미지 그리기
 	public void paintComponent(Graphics g) {
 		g.drawImage(new ImageIcon(getClass().getResource("img/back1.jpg")).getImage(), 0, 0, null);
 	}

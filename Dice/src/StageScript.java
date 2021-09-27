@@ -6,6 +6,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
+//스테이지 진행시 BottomPanel CENTER에 현제 스테이지에 몬스터 정보를 위한 JPanel 클래스
 public class StageScript extends JPanel {
 
 	String[] scriptSet = { "<html>4스테이지 까지 있으며<br>적 공격, 내 공격의 턴이 반복됩니다.<br>주사위의 눈으로 공격력이 정해집니다.</html>",
@@ -25,6 +26,7 @@ public class StageScript extends JPanel {
 		add(script);
 	}
 
+	//배경 이미지 그리기
 	public void paintComponent(Graphics g) {
 		g.drawImage(new ImageIcon(getClass().getResource("img/diceBack.png")).getImage(), 0, 0, null);
 	}
