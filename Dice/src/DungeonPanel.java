@@ -19,7 +19,8 @@ public class DungeonPanel extends JPanel {
 	Config config = new Config();
 	TurnText tx = new TurnText();
 	TurnMouseEvent tm = new TurnMouseEvent();
-
+	int i = 0;
+	
 	public DungeonPanel() {
 		setLayout(new FlowLayout());
 		setBackground(Color.yellow);
@@ -59,6 +60,9 @@ public class DungeonPanel extends JPanel {
 					if (config.monster().getHP() <= 0) {
 						config.dungeonPanel().setVisible(false);
 						if (config.getDungeonLevel() == 0) {
+							AttackAnimaion.stop();
+							monsterAttackAnimaion.stop();
+							i = 0;
 							config.mainFrame().c.add(config.winFrame());
 						}
 						else if(config.getDungeonLevel()==3) {
@@ -93,7 +97,7 @@ public class DungeonPanel extends JPanel {
 
 		}
 
-		int i = 0;
+	
 		
 		//공격시 애니메이션 효과를 위한 Timer
 		Timer monsterAttackAnimaion = new Timer(100, new ActionListener() {
